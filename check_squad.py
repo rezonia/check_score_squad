@@ -114,6 +114,7 @@ class MetamonPlayer:
                 all_teams = team_list.get("data", {}).get("list")
                 
                 for team in all_teams:
+                    id = team.get("id")
                     name = team.get("name")
                     monsterNum = team.get("monsterNum")
                     totalSca = team.get("totalSca")
@@ -124,7 +125,7 @@ class MetamonPlayer:
                     if totalSca > 0 and monsterNum > 100:
                         avg = int(totalSca / monsterNum)
                         #sys.stdout.write(ERASE_LINE)
-                        print(f"=={name}==")
+                        print(f"=={name}==[ID:{id}]")
                         print(f"{monsterNum} / 1000\t\t{totalSca}\t\tAVG:{avg}")
                         print(f"========")
                 print("===========CheckTool-RezRaca==============")
